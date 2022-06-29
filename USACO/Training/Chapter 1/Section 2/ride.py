@@ -14,7 +14,4 @@ with open('ride.in', 'r') as fin:
     x = [ord(s) - 64 for s in ship]
 
 with open('ride.out', 'w') as fout:
-    if (math.prod(a) % 47 == math.prod(x) % 47):
-        fout.write ("GO" + '\n')
-    else:
-        fout.write ("STAY" + '\n')
+    fout.write("{}\n".format("GO" if math.prod(a) % 47 == math.prod(x) % 47 "STAY" else)
