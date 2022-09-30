@@ -1,2 +1,2 @@
 # competitive-programming
-My extremely stupid and inefficient python solutions that probably don't even work
+My extremely stupid and inefficient solutions that probably don't even work
