@@ -13,7 +13,7 @@ int main() {
     setIO("cowsignal");
     
     int M, K, N;
-    cin >> M >> K >> N;
+    cin >> M >> N >> K;
 
     vector<string> signal(M);
     for (int i = 0; i < M; i++) {
@@ -21,14 +21,13 @@ int main() {
     }
 
     for (string line : signal) {
-        int xCount = count(line.begin(), line.end(), 'X');
-        int fullstopCount = count(line.begin(), line.end(), '.');
+        string broadcast = "";
 
-        string newX = string(xCount * K, 'X');
-        string newFullstop = string(fullstopCount * K, '.');
-
+        for (int i=0; i<N; i++) {
+            broadcast += string(K, line[i]);
+        }
         for (int j=0; j<K; j++) {
-            cout << newX + newFullstop << '\n';
+            cout << broadcast << '\n';
         }
     }
     
