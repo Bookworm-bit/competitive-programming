@@ -32,17 +32,15 @@ int main() {
 
     int idx = 0;
     for (int i=0; i<rawBessieDistance.size(); i++) {
-        for (int j=0; j<rawBessieDistance[i]; i++) {
+        for (int j=0; j<rawBessieDistance[i]; j++) {
             bessieSpeed[idx] = rawBessieSpeed[i];
-            // cout << bessieSpeed[idx] << '\n';
             idx++;
         }
     }
     int jdx = 0;
     for (int i=0; i<rawRoadDistance.size(); i++) {
-        for (int j=0; j<rawRoadDistance[i]; i++) {
+        for (int j=0; j<rawRoadDistance[i]; j++) {
             roadSpeed[jdx] = rawRoadSpeed[i];
-            // cout << roadSpeed[jdx] << '\n';
             jdx++;
         }
     }
