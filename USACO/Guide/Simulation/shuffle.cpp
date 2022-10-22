@@ -14,14 +14,26 @@ int main() {
     cin >> N;
 
     vector<int> directions(N);
-    vector<int> endPositions(N);
+    vector<int> cowID(N);
 
     for (int i=0; i<N; i++) {
         cin >> directions[i];
     }
     for (int i=0; i<N; i++) {
-        cin >> endPositions[i];
+        cin >> cowID[i];
     }
 
-    
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<N; j++) {
+            int backtrack = find(directions.begin(), directions.end(), j + 1) - directions.begin();
+            int first = cowID[j];
+            int last = cowID[backtrack];
+            cowID[j] = last;
+            cowID[j] = backtrack;
+            
+        }
+    }
+    for (int i=0; i<N; i++) {
+        cout << cowID[i] << '\n';
+    }
 }
