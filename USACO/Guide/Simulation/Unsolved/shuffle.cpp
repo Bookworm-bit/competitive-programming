@@ -10,6 +10,7 @@ void setIO(string s) {
 }
 
 int main() {
+    setIO("shuffle");
     int N;
     cin >> N;
 
@@ -28,11 +29,12 @@ int main() {
             int backtrack = find(directions.begin(), directions.end(), j + 1) - directions.begin();
             int first = cowID[j];
             int last = cowID[backtrack];
-            cowID[j] = last;
-            cowID[j] = backtrack;
+            cowID[backtrack] = last;
+            cowID[j] = first;
             
         }
     }
+
     for (int i=0; i<N; i++) {
         cout << cowID[i] << '\n';
     }

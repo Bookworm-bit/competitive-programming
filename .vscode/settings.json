@@ -4,6 +4,10 @@
         "iostream": "cpp",
         "utility": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "xstring": "cpp",
+        "cmath": "cpp"
     }
 }
