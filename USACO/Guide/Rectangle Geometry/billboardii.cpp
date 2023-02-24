@@ -1,7 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 void setIO(string s) {
@@ -10,7 +7,7 @@ void setIO(string s) {
 }
 
 int cornersCovered(int cowfeed, int lawnmower) {
-    
+    ;
 }
 
 int main() {
