@@ -17,15 +17,27 @@ int main() {
         cin >> genomes[i];
     }
 
-    for (int i=0; i<2*N; i++) {
-        cout << genomes[i] << ' ';
-    }
-
     int spotty_genes = 0;
-    vector<char> bases = {'A', 'T', 'C', 'G'} // adenine, thymine, cytosine, guanine
     for (int p=0; p<M; p++) {
-        for (auto b : bases) {
-            if ()
+        string spotty = "";
+        string plain = "";
+        for (int c=0; c<N; c++) {
+            spotty += genomes[c][p];
+        }
+        for (int c=N; c<2*N; c++) {
+            plain += genomes[c][p];
+        }
+
+        int good_check = 0;
+        for (auto ch : spotty) {
+            if (count(plain.begin(), plain.end(), ch) == 0) {
+                good_check++;
+            }
+        }
+
+        if (good_check == N) {
+            spotty_genes++;
         }
     }
+    cout << spotty_genes << '\n';
 }
