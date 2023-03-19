@@ -9,6 +9,12 @@
         "xlocinfo": "cpp",
         "xstring": "cpp",
         "cmath": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "iterator": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "algorithm": "cpp"
     }
 }
