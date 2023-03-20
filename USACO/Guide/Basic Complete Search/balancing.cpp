@@ -12,22 +12,22 @@ int main() {
     int N, B;
     cin >> N >> B;
 
-    vector<int> x_coords(N);
-    vector<int> y_coords(N);
-    for (int i=0; i<N; i++) {
+    vector<long long> x_coords(N);
+    vector<long long> y_coords(N);
+    for (long long i=0; i<N; i++) {
         cin >> x_coords[i] >> y_coords[i];
     }
 
-    vector<int> largest;
-    vector<int> a;
-    vector<int> b;
-    for (int i=0; i<N; i++) {
+    vector<long long> largest;
+    vector<long long> a;
+    vector<long long> b;
+    for (long long i=0; i<N; i++) {
         a.push_back(x_coords[i] - 1);
         b.push_back(y_coords[i] - 1);
     }
     for (int j=0; j<N; j++) {
         for (int k=0; k<N; k++) {
-            vector<int> quadrant_count(4, 0);
+            vector<long long> quadrant_count(4, 0);
             for (int i=0; i<N; i++) {
                 if (x_coords[i] > a[j] && y_coords[i] > b[k]) {
                     quadrant_count[0]++;
