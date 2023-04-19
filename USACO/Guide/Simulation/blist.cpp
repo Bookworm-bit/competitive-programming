@@ -31,7 +31,6 @@ int main() {
     vector<int> bucket_status;
 
     for (int time=earliest; time<latest+1; time++) {
-        // Find which cow is ending milking at this time and free up their bucket(s)
         if (find(end_times.begin(), end_times.end(), time) != end_times.end()) {
             int end_milk = find(end_times.begin(), end_times.end(), time) - end_times.begin();
             int used_bucket_idx;
@@ -41,7 +40,6 @@ int main() {
             }
         }
 
-        // Find which cow is starting to milk at this time and find buckets for them
         if (find(start_times.begin(), start_times.end(), time) != start_times.end()) {
             int begin_milk = find(start_times.begin(), start_times.end(), time) - start_times.begin();
             if (time == earliest) {
@@ -70,7 +68,6 @@ int main() {
             }
         }
     }
-
     
     cout << bucket_list.size() << '\n';
 }

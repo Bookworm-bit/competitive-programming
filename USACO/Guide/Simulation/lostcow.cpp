@@ -5,17 +5,17 @@
 #include <math.h>
 using namespace std;
 
+void setIO(string s) {
+    freopen((s + ".in").c_str(), "r", stdin);
+    freopen((s + ".out").c_str(), "w", stdout);
+}
+
 int power(int idx) {
     int result = 1;
     for (int i=0; i<idx; i++) {
         result *= -2;
     }
     return result;
-}
-
-void setIO(string s) {
-    freopen((s + ".in").c_str(), "r", stdin);
-    freopen((s + ".out").c_str(), "w", stdout);
 }
 
 bool intersection(int x, int y, int idx) {
