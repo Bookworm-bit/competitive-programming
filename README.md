@@ -1,2 +1,1 @@
-# competitive-programming
-My extremely stupid and inefficient solutions that probably don't even work
+if you can understand my massive mess of a collection of spaghetti code, you deserve a nobel prize
