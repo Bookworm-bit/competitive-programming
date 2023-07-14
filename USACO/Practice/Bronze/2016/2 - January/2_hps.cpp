@@ -16,24 +16,18 @@ int main() {
     for (short i=0; i<N; i++) {
         cin >> games[i][0] >> games[i][1];
     }
-
-    short mostWins = -1;
-    for (short i=0; i<3; i++) {
-        short cow1Wins = 0;
-        for (short j=0; j<N; j++) {
-            if (games[j][0] == i) {
-                games[j][0] += 3;
-            } else if (games[j][1] == i) {
-                games[j][1] += 3; 
-            }
-
-            if (games[j][0] - games[j][1] == 1 || games[j][0] - games[j][1] == -2) {
-                cow1Wins++;
-            }
+    
+    short wins1 = 0;
+    short wins2 = 0;
+    for (short i=0; i < N; i++) {
+        if (games[i][0] - games[i][1] == 1 || games[i][0] - games[i][1] == -2) {
+            wins1++;
+        } else if (games[i][0] - games[i][1] == -1 || games[i][0] - games[i][1] == 2) {
+            wins2++;
         }
-
-        mostWins = max(cow1Wins, mostWins);
     }
+
+    short mostWins = max(wins1, wins2);
 
     cout << mostWins << '\n';
 }
