@@ -6,18 +6,23 @@ void setIO(string s) {
     freopen((s + ".out").c_str(), "w", stdout);
 }
 
-int cornersCovered(int cowfeed, int lawnmower) {
-    ;
-}
-
 int main() {
     setIO("billboard");
-    
-    vector<int> lawnmowerCoords(4);
-    vector<int> cowfeedCoords(4);
 
-    cin >> lawnmowerCoords[0] >> lawnmowerCoords[1] >> lawnmowerCoords[2] >> lawnmowerCoords[3];
-    cin >> cowfeedCoords[0] >> cowfeedCoords[1] >> cowfeedCoords[2] >> cowfeedCoords[3];
+    int lawnmower[4];
+    int cowfeed[4];
 
-    int lawnmowerArea = (lawnmowerCoords[2] - lawnmowerCoords[0]) * (lawnmowerCoords[3] - lawnmowerCoords[1]);
+    // 0 = BL_x, 1 = BL_y, 2 = TR_x, 3 = TR_y
+    cin >> lawnmower[0] >> lawnmower[1] >> lawnmower[2] >> lawnmower[3];
+    cin >> cowfeed[0] >> cowfeed[1] >> cowfeed[2] >> cowfeed[3];
+
+    int tarpArea = (lawnmower[2] - lawnmower[0]) * (lawnmower[3] - lawnmower[1]);
+
+    if (cowfeed[2] >= lawnmower[2] && cowfeed[0] <= lawnmower[0]) {
+        if ()
+    } else if (cowfeed[3] >= lawnmower[3] && cowfeed[1] >= lawnmower[1]) {
+        tarpArea -= ();
+    }
+
+    cout << tarpArea << '\n';
 }
