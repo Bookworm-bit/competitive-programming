@@ -8,4 +8,6 @@ void setIO(string s) {
 
 int main() {
     setIO("");
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 }
