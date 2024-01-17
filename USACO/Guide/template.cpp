@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 void setIO(string s) {
     freopen((s + ".in").c_str(), "r", stdin);
