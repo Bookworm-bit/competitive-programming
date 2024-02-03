@@ -26,12 +26,12 @@ int main() {
 		else prefixSum[i] = prefixSum[i-1] + ids[i];
 	}
 
-	int ret = 0;
-	for (int i=0; i<N; i++) {
+	for (int i=N-1; i>=0; i--) {
 		for (int j=0; j<N-i; j++) {
-			if (abs(prefixSum[j+i] - prefixSum[j]) % 7 == 0) ret = max(ret, i);
+			if (abs(prefixSum[j+i] - prefixSum[j]) % 7 == 0) {
+				cout << i << '\n';
+				return 0;
+			}
 		}
 	}
-
-	cout << ret << '\n';
 }
