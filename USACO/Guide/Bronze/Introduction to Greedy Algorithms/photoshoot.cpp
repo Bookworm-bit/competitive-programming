@@ -2,29 +2,21 @@
 using namespace std;
 
 int main() {
-    int N;
-    cin >> N;
+	int N;
+	cin >> N;
 
-    string s;
-    cin >> s;
+	string s;
+	cin >> s;
 
-    int ret = 0;
-    for (int i=N-(N%2+1); i>=0; i-=2) {
-        int even = 0;
-        for (int j=1; j<=i; j+=2) {
-            if (s[j] == 'G') even++;
-        }
+	int ret = 0;
+	for (int i=N-2; i>=0; i-=2) {
+		string temp = s.substr(i, 2);
+		if (temp == "HG" && ret % 2 == 1) {
+			ret++;
+		} else if (temp == "GH" && ret % 2 == 0) {
+			ret++;
+		}
+	}
 
-        int odd = 0;
-        for (int j=0; j<i; j+=2) {
-            if (s[j] == 'G') odd++;
-        }
-
-        if (odd > even) {
-            reverse(s.begin(), s.begin()+i);
-            ret++;
-        }
-    }
-
-    cout << ret << '\n';
+	cout << ret << '\n';
 }
