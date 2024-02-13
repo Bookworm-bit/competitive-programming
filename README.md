@@ -1,1 +1,5 @@
-if you can understand my massive mess of a collection of spaghetti code, you deserve a nobel prize
+there's lots of stuff here
+
+some of it makes sense, some of it doesn't
+
+have fun find what does!
