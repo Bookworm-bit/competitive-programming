@@ -25,7 +25,7 @@ int main() {
         cin >> a >> b;
 
         differences[a-1]++;
-        differences[min(b, N-1)]--;
+        if (b <= N-1) differences[b]--;
     }
 
     int curr = 0;
