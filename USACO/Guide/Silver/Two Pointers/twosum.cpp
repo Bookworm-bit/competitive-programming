@@ -20,7 +20,7 @@ int main() {
 
     int l = 0;
     int r = n-1;
-    while (l < n && r < n) {
+    while (l < n && r >= 0) {
         if (l != r) {
             if (a[l].first + a[r].first == x) {
                 cout << a[l].second << ' ' << a[r].second << '\n';
