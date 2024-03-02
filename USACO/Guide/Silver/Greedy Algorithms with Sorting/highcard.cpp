@@ -17,29 +17,27 @@ int main() {
 	int N;
 	cin >> N;
 
-	map<int, int> elsie;
+	map<int, bool> elsie;
 	for (int i=1; i<2*N+1; i++) {
-		elsie[i] = (int) 1e9 + 1;
+		elsie[i] = false;
 	}
 
 	for (int i=0; i<N; i++) {
 		int temp;
 		cin >> temp;
 
-		elsie[temp] = 2*N - temp;
+		elsie[temp] = true;
 	}
 
 	int ret = 0;
-	int sub = 0;
 	int bessie = 0;
 	for (int i=2*N; i>0; i--) {
-		if (elsie[i] == (int) 1e9 + 1) {
+		if (!elsie[i]) {
 			bessie++;
 		} else {
-			if (bessie - sub > 0) {
+			if (bessie - ret > 0) {
 				ret++;
-				sub++;
-			}
+			}			
 		}
 	}
 
