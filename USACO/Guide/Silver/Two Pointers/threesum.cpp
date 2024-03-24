@@ -18,32 +18,20 @@ int main() {
 
     sort(a.begin(), a.end(), cmp);
 
-    int l = 0;
-    int r = n-1;
-    while (l < n && r >= 0) {
-        if (l != r) {
-            if (a[l].first + a[r].first < x) {
-                bool done = false;
-                for (int m=l+1; m<r; m++) {
-                    int temp = a[l].first + a[m].first + a[r].first;
-                    if (temp == x) {
-                        cout << a[l].second << ' ' << a[m].second << ' ' << a[r].second << '\n';
-                        return 0;
-                    } else if (temp > x) {
-                        r--;
-                        done = true;
-                        break;
-                    }
-                }
+    for (int m=1; m<n-1; m++) {
+        int l = 0;
+        int r = n-1;
 
-                if (!done) {
-                    l++;
-                }
+        int tempX = x - a[m].first;
+        while (l != r) {
+            if (a[l].first + a[r].first == tempX && l != m && r != m) {
+                cout << a[l].second << ' ' << a[m].second << ' ' << a[r].second << '\n';
+                return 0;
+            } else if (a[l].first + a[r].first < tempX) {
+                l++;
             } else {
                 r--;
             }
-        } else {
-            break;
         }
     }
 
