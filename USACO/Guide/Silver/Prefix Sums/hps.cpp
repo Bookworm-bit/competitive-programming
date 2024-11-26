@@ -24,7 +24,7 @@ int main() {
 		char temp;
 		cin >> temp;
 
-		int idx = 69;
+		int idx;
 		if (temp == 'H') {
 			idx = 0;
 		} else if (temp == 'P') {

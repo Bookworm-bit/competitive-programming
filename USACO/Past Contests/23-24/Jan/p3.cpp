@@ -11,23 +11,23 @@ int main() {
         cin >> a[i];
     }
 
-    long long ret = 0;
+    int delta = 0;
+    int rem = 0;
+    int add = 0;
+    int ret = 0;
     for (int i=0; i<N; i++) {
-        ret += abs(a[i]);
-
-        long long power = N - i;
-
-        if (a[i] == 0) continue;
+        delta += add - rem;
         
-        for (int j=N-1; j>=1; j--) {
-            if (power == 0) break;
-
-            a[j] += -a[i] * power;
-            power--;
+        int adjusted = a[i] + delta;
+        ret += abs(adjusted);
+        
+        if (adjusted > 0) {
+            rem += adjusted;
+            delta -= adjusted;
+        } else if (adjusted < 0) {
+            add -= adjusted;
+            delta -= adjusted;
         }
-
-        a[i] = 0;
     }
-
     cout << ret << '\n';
 }
